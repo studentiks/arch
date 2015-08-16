@@ -1,0 +1,10 @@
+Tips to install Arch
+
+Make GPT partition table
+parted --script /dev/sda mklabel gpt
+
+
+Syslinux kernel mount options
+rootflags=subvol=/root
+
+vconsole.conf

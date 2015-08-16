@@ -1,0 +1,1 @@
+copyq exporttab ~/.copyq.tab
