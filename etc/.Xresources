@@ -1,0 +1,16 @@
+Xcursor.theme: whiteglass
+Xft.lcdfilter: lcddefault
+
+XTerm.fullscreen: never
+!XTerm*faceName: Anonymous Pro
+!XTerm*faceSize: 11
+
+XTerm*metaSendsEscape: true
+XTerm*eightBitInput: false
+XTerm*activeIcon: false
+
+XTerm*background: black
+XTerm*cursorColor: lightgrey
+XTerm*foreground: lightgrey
+
+
