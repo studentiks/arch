@@ -1,0 +1,80 @@
+shell_patterns=1
+
+# Marco Substitution 
+#
+# %i      The indent of blank space, equal the cursor column position. For edit menu only.
+# %y      The syntax type of current file. For edit menu only.
+# %k      The block file name.
+# %e      The error file name.
+# %m      The current menu name.
+# %f and %p  The current file name.
+# %x      The extension of current file name.
+# %b      The current file name without extension.
+# %d      The current directory name.
+# %F      The current file in the unselected panel.
+# %D      The directory name of the unselected panel.
+# %t      The currently tagged files.
+# %T      The tagged files in the unselected panel.
+# %u and %U Similar to the %t and %T macros, but in addition the files are untagged. You can use this macro only once per menu file entry or extension file entry, because next time there will be no tagged files.
+# %s and %S The selected files: The tagged files if there are any. Otherwise the current file.                                                                   │                              │       │            │
+# %cd     This is a special macro that is used to change the current directory to the directory specified in front of it. This is used primarily as an interface to the Virtual File System.
+# %view   This macro is used to invoke the internal viewer. This macro can be used alone, or with arguments. If you pass any arguments to this macro, they should be enclosed in brackets.
+# %%      The % character
+# %{some text} Prompt for the substitution. An input box is shown and the text inside
+#
+# Condition syntax:       = <sub-cond>
+#                         or:= <sub-cond> | <sub-cond> ...
+#                         or:= <sub-cond> & <sub-cond> ...
+#
+# Sub-condition is one of following:
+#
+#   y             <pattern>syntax of current file matching pattern? (for edit menu only)
+#   f             <pattern>current file matching pattern?
+#   F             <pattern>other file matching pattern?
+#   d             <pattern>current directory matching pattern?
+#   D             <pattern>other directory matching pattern?
+#   t             <type>current file of type?
+#   T             <type>other file of type?
+#   x             <filename>is it executable filename?
+#   !             <sub-cond>negate the result of sub-condition
+#
+# Pattern is a normal shell pattern or a regular expression, according to the
+# shell patterns option. You can override the global value of the shell patterns
+# option by writing "shell_patterns=x" on the first line of the menu file (where
+# "x" is either 0 or 1).
+#
+# Type is one or more of the following characters:
+#
+#         nnot a directory
+#         rregular file
+#         ddirectory
+#         llink
+#         ccharacter device
+#         bblock device
+#         fFIFO (pipe)
+#         ssocket
+#         xexecutable file
+#         ttagged
+#
+# For example 'rlf' means either regular file, link or fifo. The 't' type is a
+# little special because it acts on the panel instead of the file. The condition
+# '=t t' is true if there are tagged files in the current panel and false if not
+# Addition Conditions
+#
+# If the condition begins with '+' (or '+?') instead of '=' (or '=?') it is an
+# addition condition. If the condition is true the menu entry will be included in
+# the menu. If the condition is false the menu entry will not be included in the
+# menu.
+
++ t d
+s       Spacefm
+	CMD=spacefm
+	$CMD %f
+	
+z       zip current file(s)
+	7z a %b.zip %s
+
++ f *.jpg
+p       Convert jpg to pdf
+	convert %s %b.pdf
+

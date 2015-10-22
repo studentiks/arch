@@ -24,11 +24,6 @@
 				<execute>tint2conf</execute>
 			</action>
 		</item>
-		<item label="sbxkb restart">
-			<action name="Execute">
-				<execute>sh -c &quot;killall -SIGUSR1 sbxkb;nohup 2&gt;/dev/null 1&gt;/dev/null sbxkb &amp;&quot;</execute>
-			</action>
-		</item>
 		<item label="screen on">
 			<action name="Execute">
 				<execute>~/.config/openbox/screen_on.sh</execute>
@@ -82,11 +77,6 @@
 				<execute>chromium</execute>
 			</action>
 		</item>
-		<item label="teamviewer">
-			<action name="Execute">
-				<execute>sh -c &quot;sudo teamviewer --daemon start; teamviewer; sudo teamviewer --daemon stop&quot;</execute>
-			</action>
-		</item>
 		<item label="libreoffice">
 			<action name="Execute">
 				<execute>libreoffice</execute>
@@ -131,7 +121,7 @@
 		<separator/>
 		<item label="steam">
 			<action name="Execute">
-				<execute>primusrun steam</execute>
+				<execute>steam</execute>
 			</action>
 		</item>
 		<item label="factorio">

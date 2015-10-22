@@ -448,22 +448,17 @@
     <!-- Fn Keys -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer set Master 5%+ unmute</command>
+        <command>~/.config/openbox/volume.fish up</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
       <action name="Execute">
-        <command>amixer set Master 5%- unmute</command>
+        <command>~/.config/openbox/volume.fish down</command>
       </action>
     </keybind>
     <keybind key="XF86AudioMute">
       <action name="Execute">
-        <command>amixer set Master toggle</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>amixer set Master toggle</command>
+        <command>~/.config/openbox/volume.fish mute</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
