@@ -1,0 +1,4 @@
+###pulseaudio for multiple users
+###http://forums.fedoraforum.org/showthread.php?t=190954
+
+load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
