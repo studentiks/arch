@@ -1,3 +1,4 @@
+~/.config/openbox/display.fish
 xrdb ~/.Xresources
 xset r rate 200 30
 xmodmap ~/.Xmodmap
@@ -9,6 +10,5 @@ tint2 &
 fbxkb &
 copyq &
 guake &
-# pasystray &
 
 exec openbox-session
