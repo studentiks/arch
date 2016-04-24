@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
-	<menu id="system-menu" label="System">
-		<item label="Openbox Configuration Manager">
+	<menu id="system-menu" label="system">
+		<item label="arandr">
+			<action name="Execute">
+				<execute>arandr</execute>
+			</action>
+		</item>
+		<item label="obconf">
 			<action name="Execute">
 				<command>obconf</command>
 				<startupnotify>
@@ -9,7 +14,7 @@
 				</startupnotify>
 			</action>
 		</item>
-		<item label="Openbox Menu Configuration">
+		<item label="obmenu">
 			<action name="Execute">
 				<execute>obmenu</execute>
 			</action>
@@ -19,7 +24,7 @@
 				<execute>~/.config/openbox/wallpaper.sh</execute>
 			</action>
 		</item>
-		<item label="Tint2 Configuration">
+		<item label="tint2conf">
 			<action name="Execute">
 				<execute>tint2conf</execute>
 			</action>
@@ -34,16 +39,21 @@
 				<execute>~/.config/openbox/screen_off.sh</execute>
 			</action>
 		</item>
-		<item label="Reconfigure Openbox">
+		<item label="reconfigure openbox">
 			<action name="Reconfigure"/>
 		</item>
 	</menu>
-	<menu id="root-menu" label="Openbox">
+	<menu id="root-menu" label="openbox">
 		<menu id="client-list-combined-menu"/>
 		<separator/>
+		<item label="wifi">
+			<action name="Execute">
+				<execute>xterm -e &quot;sudo wifi-menu&quot;</execute>
+			</action>
+		</item>
 		<item label="xterm">
 			<action name="Execute">
-				<execute>xterm </execute>
+				<execute>xterm -e fish</execute>
 			</action>
 		</item>
 		<item label="mc">
@@ -51,9 +61,20 @@
 				<execute>xterm -e mc</execute>
 			</action>
 		</item>
+		<item label="spacefm">
+			<action name="Execute">
+				<execute>spacefm</execute>
+			</action>
+		</item>
+		<separator/>
 		<item label="bluefish">
 			<action name="Execute">
 				<execute>bluefish</execute>
+			</action>
+		</item>
+		<item label="geany">
+			<action name="Execute">
+				<execute>geany</execute>
 			</action>
 		</item>
 		<item label="speedcrunch">
@@ -61,9 +82,9 @@
 				<execute>speedcrunch</execute>
 			</action>
 		</item>
-		<item label="spacefm">
+		<item label="goldendict">
 			<action name="Execute">
-				<execute>spacefm</execute>
+				<execute>goldendict</execute>
 			</action>
 		</item>
 		<separator/>
@@ -77,6 +98,11 @@
 				<execute>chromium</execute>
 			</action>
 		</item>
+		<item label="thunderbird">
+			<action name="Execute">
+				<execute>thunderbird</execute>
+			</action>
+		</item>
 		<item label="libreoffice">
 			<action name="Execute">
 				<execute>libreoffice</execute>
@@ -88,16 +114,17 @@
 			</action>
 		</item>
 		<separator/>
-		<item label="deadbeef">
+		<item label="steam">
 			<action name="Execute">
-				<execute>deadbeef</execute>
+				<execute>steam</execute>
 			</action>
 		</item>
-		<item label="spotify">
+		<item label="factorio">
 			<action name="Execute">
-				<execute>spotify</execute>
+				<execute>/home/public/factorio/bin/x64/factorio</execute>
 			</action>
 		</item>
+		<separator/>
 		<item label="skype">
 			<action name="Execute">
 				<execute>skype</execute>
@@ -113,44 +140,40 @@
 				<execute>smplayer</execute>
 			</action>
 		</item>
+		<item label="deadbeef">
+			<action name="Execute">
+				<execute>deadbeef</execute>
+			</action>
+		</item>
 		<item label="deluge">
 			<action name="Execute">
 				<execute>deluge</execute>
 			</action>
 		</item>
 		<separator/>
-		<item label="steam">
-			<action name="Execute">
-				<execute>steam</execute>
-			</action>
-		</item>
-		<item label="factorio">
-			<action name="Execute">
-				<execute>primusrun /home/public/factorio/bin/x64/factorio</execute>
-			</action>
-		</item>
-		<item label="minecraft">
-			<action name="Execute">
-				<execute>primusrun java -jar /home/public/.minecraft/launcher.jar</execute>
-			</action>
-		</item>
-		<item label="gcompris">
-			<action name="Execute">
-				<execute>gcompris</execute>
-			</action>
-		</item>
-		<item label="weston">
-			<action name="Execute">
-				<execute>weston</execute>
-			</action>
-		</item>
-		<separator/>
 		<menu id="system-menu"/>
 		<separator/>
-		<item label="Exit">
-			<action name="Execute">
-				<execute>~/.config/openbox/logout.sh</execute>
-			</action>
-		</item>
+		<menu id="exit-menu" label="exit">
+			<item label="suspend">
+				<action name="Execute">
+					<execute>sudo systemctl suspend</execute>
+				</action>
+			</item>
+			<item label="poweroff">
+				<action name="Execute">
+					<execute>sudo systemctl poweroff</execute>
+				</action>
+			</item>
+			<item label="reboot">
+				<action name="Execute">
+					<execute>sudo systemctl reboot -i</execute>
+				</action>
+			</item>
+			<item label="logout">
+				<action name="Execute">
+					<execute>~/.config/openbox/logout.sh</execute>
+				</action>
+			</item>
+		</menu>
 	</menu>
 </openbox_menu>

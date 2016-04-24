@@ -1,0 +1,1 @@
+rofi -combi-modi "run:~/.config/openbox/rofi_menu.py,window" -switchers combi -show combi
